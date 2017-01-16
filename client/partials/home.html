@@ -1,0 +1,20 @@
+<br>
+<span>Photo</span>
+<input type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="10MB" required ngf-model-invalid="errorFile">
+<button ng-disabled="isDisabled" ng-click="uploadPic(picFile)">Submit</button>
+<span ng-show="picFile.result">Upload Successful</span>
+<span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+<br>
+<br>
+<br>
+
+<div class="my_container">
+  <ul>
+    <li class="block" ng-repeat="picture in pictures">
+      <img ng-src="{{picture}}" />
+      <span class="block-settings">
+        <span href="#" class="close" ng-click="deletePic(picture)"></span>
+      </span>
+    </li>
+  </ul>  
+</div>

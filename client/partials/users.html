@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-sm-3" ng-repeat="user in users" ng-click="showUser(user)">
+    <div class="panel panel-default" style="cursor: pointer">
+      <div class="panel-body">
+        <div>{{user.username}}</div>
+        <div>Pictures: <span>{{user.images.length}}</span></div>
+      </div>
+    </div>
+  </div>
+</div>

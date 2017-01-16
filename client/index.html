@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>MEAN Auth</title>
+    <!-- styles -->
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/yeti/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/">Kotogramm</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#/users">Users</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-show="user"><a href="#/settings">Settings</a></li>
+                <li ng-show="!user"><a href="#/login">Login</a></li>
+                <li ng-show="!user"><a href="#/register">Register</a></li>
+                <li ng-show="user"><a href="#" ng-controller="logoutController" ng-click="logout()">Logout</a></li>
+            </ul>
+
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+
+<div class="container">
+    <div ng-view></div>
+</div>
+
+<!-- scripts -->
+<script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+<script src="./libs/ng-file-upload.min.js"></script>
+<!--main-->
+<script src="./main.js"></script>
+
+<!--services-->
+<script src="./services/authService.js"></script>
+<script src="./services/pictureService.js"></script>
+<script src="./services/usersService.js"></script>
+<script src="./services/settingsService.js"></script>
+<script src="./services/adminService.js"></script>
+
+
+<!--controllers-->
+<script src="./controllers/authControllers.js"></script>
+<script src="./controllers/mainController.js"></script>
+<script src="./controllers/usersController.js"></script>
+<script src="./controllers/settingsController.js"></script>
+<script src="./controllers/userController.js"></script>
+
+</body>
+</html>
